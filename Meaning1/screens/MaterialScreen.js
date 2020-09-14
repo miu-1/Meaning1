@@ -7,6 +7,9 @@ import { Chevron } from 'react-native-shapes';
 import Constant from 'expo-constants';
 import RNPickerSelect, { defaultStyles } from 'react-native-picker-select';
 import {Card} from 'react-native-paper';
+import { ACTIVIDADES } from './Actividades';
+import { TIPS } from './Tips';
+
 
 const cursos = [
   { label: 'Jardín', value: 'Jardín' },
@@ -32,50 +35,19 @@ class MaterialScreen extends Component {
     this.state = {
       favCurso: undefined,
       favMateria: undefined,
-      Actividades: [
-        {ID: '1', Titulo: 'Titulo Actividad 1', Fecha: '1 de Octubre 2020', Curso:'1° Básico', Materia:'Matemáticas'}, 
-        {ID: '2', Titulo: 'Titulo Actividad 2', Fecha: '2 de Octubre 2020', Curso:'2° Básico', Materia:'Matemáticas'},
-        {ID: '3', Titulo: 'Titulo Actividad 3', Fecha: '3 de Octubre 2020', Curso:'3° Básico', Materia:'Lenguaje'},
-        {ID: '4', Titulo: 'Titulo Actividad 4', Fecha: '4 de Octubre 2020', Curso:'4° Básico', Materia:'Ciencias Naturales'},
-        {ID: '5', Titulo: 'Titulo Actividad 5', Fecha: '5 de Octubre 2020', Curso:'1° Básico', Materia:'Historia'},
-      ],
-      Tips: [
-        {ID: '1', Titulo: 'Titulo Tip 1', Fecha: '1 de Octubre 2020', Curso:'Básica'}, 
-        {ID: '2', Titulo: 'Titulo Tip 2', Fecha: '2 de Octubre 2020', Curso:'Básica'},
-        {ID: '3', Titulo: 'Titulo Tip 3', Fecha: '3 de Octubre 2020', Curso:'Jardín'},
-        {ID: '4', Titulo: 'Titulo Tip 4', Fecha: '4 de Octubre 2020', Curso:'Padres Primerizos'},
-        {ID: '5', Titulo: 'Titulo Tip 5', Fecha: '5 de Octubre 2020', Curso:'Padres Primerizos'},
-      ],
-      ActFiltered: [
-        {ID: '1', Titulo: 'Titulo Actividad 1', Fecha: '1 de Octubre 2020', Curso:'1° Básico', Materia:'Matemáticas'}, 
-        {ID: '2', Titulo: 'Titulo Actividad 2', Fecha: '2 de Octubre 2020', Curso:'2° Básico', Materia:'Matemáticas'},
-        {ID: '3', Titulo: 'Titulo Actividad 3', Fecha: '3 de Octubre 2020', Curso:'3° Básico', Materia:'Lenguaje'},
-        {ID: '4', Titulo: 'Titulo Actividad 4', Fecha: '4 de Octubre 2020', Curso:'4° Básico', Materia:'Ciencias Naturales'},
-        {ID: '5', Titulo: 'Titulo Actividad 5', Fecha: '5 de Octubre 2020', Curso:'1° Básico', Materia:'Historia'},
-      ],
-      TipsFiltered: [
-        {ID: '1', Titulo: 'Titulo Tip 1', Fecha: '1 de Octubre 2020', Curso:'Básica'}, 
-        {ID: '2', Titulo: 'Titulo Tip 2', Fecha: '2 de Octubre 2020', Curso:'Básica'},
-        {ID: '3', Titulo: 'Titulo Tip 3', Fecha: '3 de Octubre 2020', Curso:'Jardín'},
-        {ID: '4', Titulo: 'Titulo Tip 4', Fecha: '4 de Octubre 2020', Curso:'Padres Primerizos'},
-        {ID: '5', Titulo: 'Titulo Tip 5', Fecha: '5 de Octubre 2020', Curso:'Padres Primerizos'},
-      ],
+      Actividades: ACTIVIDADES,
+      Tips: TIPS,
+      ActFiltered: ACTIVIDADES,
+      TipsFiltered: TIPS,
     };
   }
 
   getActividad=(item)=>{
-    var Titulo=item.Titulo;
-    var Fecha=item.Fecha;
-    var Materia=item.Materia;
-    var Curso=item.Curso;
-    alert(Titulo+"\n"+Fecha+"\n"+Materia+"\n"+Curso);
+    this.props.navigation.navigate('Actividad', item);
   }
 
   getTip=(item)=>{
-    var Titulo=item.Titulo;
-    var Fecha=item.Fecha;
-    var Curso=item.Curso;
-    alert(Titulo+"\n"+Fecha+"\n"+Curso);
+    this.props.navigation.navigate('Tip', item);
   }
 
   handleSearch(textsearch){
@@ -176,13 +148,12 @@ class MaterialScreen extends Component {
               renderItem={({item})=>
                 <Card style={{backgroundColor: '#EFEFEF', borderBottomWidth: 1, borderBottomColor: '#DDDDDD', borderRadius: 0}} onPress={this.getActividad.bind(this,item)}>
                   <View style= {{flex: 1, flexDirection:'row', padding: 5, marginLeft: 6}}>
-                    <Text style={{flex: 1, fontSize: 15}}>{item.Titulo}</Text>
-                    <Text style={{flex: 1, fontSize: 15, marginLeft: 40}}>{item.Fecha}</Text>
+                    <Text style={{flex: 1, fontSize: 15, fontWeight: '500', marginRight: 6}}>{item.Titulo}</Text>
                   </View>
 
-                  <View style= {{flex: 1, flexDirection:'row', padding: 5, marginLeft: 6}}>
-                    <Text style={{flex: 1, fontSize: 15}}>{item.Curso}</Text> 
-                    <Text style={{flex: 1, fontSize: 15, marginLeft: 40}}>{item.Materia}</Text>
+                  <View style= {{flex: 1, flexDirection:'row', padding: 6, marginLeft: 6}}>
+                    <Text style={{flex: 1, fontSize: 15}}>{item.Fecha}</Text>
+                    <Text style={{flex: 2, fontSize: 15, textAlign: 'left', paddingRight: 6, marginLeft: 23}}>{`${item.Curso} - ${item.Materia}`}</Text> 
                   </View>
                 </Card>
               }
@@ -191,18 +162,18 @@ class MaterialScreen extends Component {
           </View>
          
           <Text style={{marginBottom:8, fontWeight: 'bold', fontSize: 23, marginTop: 5, textAlign: 'center'}}>Tips</Text>
-           <View style={{flex:1, width: '99%', borderWidth: 1, borderColor:'#DDDDDD' , borderRadius: 5}}>
+           <View style={{flex: 1, width: '99%', borderWidth: 1, borderColor:'#DDDDDD' , borderRadius: 5}}>
             <FlatList
               data={this.state.TipsFiltered}
               renderItem={({item})=>
                 <Card style={{backgroundColor: '#EFEFEF', borderBottomWidth: 1, borderBottomColor: '#DDDDDD', borderRadius: 0}} onPress={this.getTip.bind(this,item)}>
                   <View style= {{flex: 1, flexDirection:'row', padding: 5, marginLeft: 6}}>
-                    <Text style={{flex: 1, fontSize: 15}}>{item.Titulo}</Text>
-                    <Text style={{flex: 1, fontSize: 15, marginLeft: 40}}>{item.Fecha}</Text>
+                    <Text style={{flex: 1, fontSize: 15, fontWeight: '500', marginRight:6}}>{item.Titulo}</Text>
                   </View>
 
                   <View style= {{flex: 1, flexDirection:'row', padding: 6, marginLeft: 6}}>
-                    <Text style={{flex: 1, fontSize: 15}}>{`Nivel: ${item.Curso}`}</Text> 
+                    <Text style={{flex: 1, fontSize: 15}}>{item.Fecha}</Text>
+                    <Text style={{flex: 2, fontSize: 15, textAlign: 'left', paddingRight: 6, marginLeft: 67}}>{`Nivel: ${item.Curso}`}</Text> 
                   </View>
                 </Card>
               }

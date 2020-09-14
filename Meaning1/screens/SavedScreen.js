@@ -5,7 +5,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import headerlogo from './loglogo/logo2.png'
 import Constant from 'expo-constants'
 
-class NewsFeedScreen extends Component{
+class SavedScreen extends Component{
   render() {
     return(
       <KeyboardAvoidingView behavior = "padding" style = { styles.container } >
@@ -39,4 +39,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default NewsFeedScreen;
+export default SavedScreen;
