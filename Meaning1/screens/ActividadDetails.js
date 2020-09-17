@@ -4,8 +4,6 @@ import {WebView} from 'react-native-webview';
 import Constant from 'expo-constants';
 import { ActivityIndicator, Card } from 'react-native-paper';
 
-
-
 export default function ActividadDetails({ route,navigation }) {
   const { Titulo } = route.params;
   const {DescripcionVideo} = route.params;
@@ -27,7 +25,12 @@ export default function ActividadDetails({ route,navigation }) {
               startInLoadingState={true}
             />
             <Text style={{fontSize: 16, textAlign: 'left', marginTop: 10}}>{`Actividad: ${DescripcionActividad}`}</Text>
-            <WebView style={{height: 500}} source= {{uri: "https://reactnativemaster.com/wp-content/uploads/2020/02/React-native-document-viewer-pdf-sample.pdf"  }}/>
+            <WebView 
+              style={{height: 500}} 
+              source= {{uri: "https://reactnativemaster.com/wp-content/uploads/2020/02/React-native-document-viewer-pdf-sample.pdf"  }}
+              originWhitelist={['*']}
+              startInLoadingState={true}
+            />
           </ScrollView>
         </View>
       );
@@ -43,6 +46,12 @@ export default function ActividadDetails({ route,navigation }) {
           </View>
           <View style={{flex: 2, marginHorizontal:6, marginTop: 10, borderRadius: 7, borderWidth: 1, padding: 6}}>
             <Text style={{fontSize: 16, textAlign: 'left', marginTop: 15}}>{`Actividad: ${DescripcionActividad}`}</Text>
+            <WebView 
+              style={{height: 500}} 
+              source= {{uri: "https://reactnativemaster.com/wp-content/uploads/2020/02/React-native-document-viewer-pdf-sample.pdf"  }}
+              originWhitelist={['*']}
+              startInLoadingState={true}
+            />
           </View>
         </ScrollView>
       </View>

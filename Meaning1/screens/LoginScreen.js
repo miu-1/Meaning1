@@ -1,24 +1,34 @@
 import React, {Component } from 'react';
 import { Image, Alert, Button, Text, TouchableOpacity, TextInput, View, StyleSheet, KeyboardAvoidingView } from 'react-native';
 import logo from './loglogo/logonegro.png';
+import * as Google from 'expo-google-app-auth';
 
 class LoginScreen extends Component {
+
+  signInWithGoogleAsync = async() => {
+    try {
+      const result = await Google.logInAsync({
+        //androidClientId: YOUR_CLIENT_ID_HERE,
+        behavior: 'web',
+        iosClientId: '432650538639-rd7vq84gabj2ko6smietfp68qdldli21.apps.googleusercontent.com',
+        scopes: ['profile', 'email'],
+      });
+
+      if (result.type === 'success') {
+        return result.accessToken;
+      } else {
+        return { cancelled: true };
+      }
+    } catch (e) {
+      return { error: true };
+    }
+  }
 
     state = {
       email: '',
       password: '',
     };
   
-  
-  onLogin() {
-    const { email, password } = this.state;
-    if(email=="" || password ==""){
-      Alert.alert('Falta algo')
-    }else{
-      this.props.navigation.navigate('Inicio')
-      //Alert.alert("Todo ok.")
-    }
-  }
 
   render() {
     return (
@@ -51,7 +61,7 @@ class LoginScreen extends Component {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.Btnlogin}
-          onPress={this.onLogin.bind(this)}
+          onPress={() => this.signInWithGoogleAsync()}
         >
            <Text style={styles.BtnText}> Iniciar Sesión</Text>
         </TouchableOpacity>
