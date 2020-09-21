@@ -13,18 +13,12 @@ import MaterialScreen from './screens/MaterialScreen'
 import ActividadDetails from './screens/ActividadDetails'
 import TipDetails from './screens/TipDetails'
 import LoadingScreen from './screens/LoadingScreen'
+import MasScreen from './screens/MasScreen'
 
 import * as firebase from 'firebase';
 import {firebaseConfig} from './config';
 firebase.initializeApp(firebaseConfig);
-
-function MasScreen() {
-  return (
-    <View>
-      <Text>Mas!!</Text>
-    </View>
-  );
-}
+var storage = firebase.storage();
 
 const Tab = createBottomTabNavigator();
 
