@@ -1,14 +1,21 @@
 import React, { Component, useState, useCallback, useRef } from 'react';
-import { Text, View, StyleSheet, ScrollView, TouchableOpacity, Image } from 'react-native';
+import { Text, View, StyleSheet, ScrollView, TouchableOpacity, ActivityIndicator } from 'react-native';
 import {WebView} from 'react-native-webview';
 import Constant from 'expo-constants';
-import { ActivityIndicator, Card } from 'react-native-paper';
+import firebase from 'firebase';
 
 export default function ActividadDetails({ route,navigation }) {
   const { Titulo } = route.params;
   const {DescripcionVideo} = route.params;
   const {Video} = route.params;
   const {DescripcionActividad} = route.params;
+  const {ActividadPDF} = route.params;
+
+  var storage = firebase.storage();
+  var storageRef = storage.ref();
+  var ActividadesRef = storageRef.child('Actividades');
+  var PdfRef=ActividadesRef.child(ActividadPDF);
+  var httpsReference = storage.refFromURL('https://firebasestorage.googleapis.com/v0/b/app-mobile-meaning.appspot.com/o/Afiche%20feria%20universtiaria.pdf?alt=media&token=4d447714-387c-419a-9b18-8d93541b26a7')
   
   if (Video){
       return(
@@ -27,7 +34,7 @@ export default function ActividadDetails({ route,navigation }) {
             <Text style={{fontSize: 16, textAlign: 'left', marginTop: 10}}>{`Actividad: ${DescripcionActividad}`}</Text>
             <WebView 
               style={{height: 500}} 
-              source= {{uri: "https://reactnativemaster.com/wp-content/uploads/2020/02/React-native-document-viewer-pdf-sample.pdf"  }}
+              source= {{uri: ActividadPDF}}
               originWhitelist={['*']}
               startInLoadingState={true}
             />

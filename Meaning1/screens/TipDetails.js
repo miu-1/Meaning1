@@ -3,7 +3,6 @@ import { Text, View, Alert, StyleSheet, ImageBackground } from 'react-native';
 import { Card, Title, Paragraph } from 'react-native-paper';
 import {WebView} from 'react-native-webview';
 import Constant from 'expo-constants';
-import PDF from './PDFAct/Act1.pdf';
 
 export default function TipDetails({ route,navigation }) {
   const { Titulo } = route.params;
