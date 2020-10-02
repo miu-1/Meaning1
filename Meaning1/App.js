@@ -6,6 +6,10 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import ICONHOME from './assets/Home.png';
 import ICONSAVED from './assets/Guardado.png';
 import ICONMAS from './assets/Mas.png';
+import { useFonts } from 'expo-font';
+import { SourceSansPro_400Regular, SourceSansPro_600SemiBold, SourceSansPro_700Bold } from '@expo-google-fonts/source-sans-pro';
+import { Ubuntu_500Medium, Ubuntu_400Regular} from '@expo-google-fonts/ubuntu';
+import { AppLoading } from 'expo';
 
 import LoginScreen from './screens/LoginScreen'
 import SavedScreen from './screens/SavedScreen'
@@ -14,17 +18,25 @@ import ActividadDetails from './screens/ActividadDetails'
 import TipDetails from './screens/TipDetails'
 import LoadingScreen from './screens/LoadingScreen'
 import MasScreen from './screens/MasScreen'
+import ActividadFullscreen from './screens/ActividadFullscreen'
 
 import * as firebase from 'firebase';
 import {firebaseConfig} from './config';
-firebase.initializeApp(firebaseConfig);
+if (!firebase.apps.length){
+  firebase.initializeApp(firebaseConfig);
+}
 var storage = firebase.storage();
 
 const Tab = createBottomTabNavigator();
 
 function InicioScreen() {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+      tabBarOptions={{
+        activeTintColor: '#FFBD3A',
+        inactiveTintColor: 'gray',
+        labelStyle: {fontFamily: 'SourceSansPro_400Regular'}
+      }}>
       <Tab.Screen 
         name="Material" 
         component={MaterialScreen}
@@ -37,17 +49,6 @@ function InicioScreen() {
         }}
       />
       <Tab.Screen 
-        name="Guardados" 
-        component={SavedScreen} 
-        options={{
-          tabBarIcon: ({color}) => (
-            <Image 
-              style={{width: 35, height: 35}}
-              source= {ICONSAVED}/>
-          ),
-        }}
-      />
-      <Tab.Screen 
         name="Mas" 
         component={MasScreen}
         options={{
@@ -55,7 +56,7 @@ function InicioScreen() {
             <Image 
               style={{width: 40, height: 35}}
               source= {ICONMAS}/>
-          ),
+          )
         }}
       />
     </Tab.Navigator>
@@ -65,6 +66,19 @@ function InicioScreen() {
 const Stack = createStackNavigator();
 
 function App() { 
+  
+  let [fontsLoaded] = useFonts({
+    SourceSansPro_400Regular, 
+    SourceSansPro_600SemiBold,
+    SourceSansPro_700Bold,
+    Ubuntu_500Medium, 
+    Ubuntu_400Regular
+  });
+  
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  }
+
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Loading">
@@ -86,19 +100,27 @@ function App() {
         <Stack.Screen
           name="Actividad"
           component= { ActividadDetails }
-          options={{headerShown: true,
-            headerTintColor: '#5A5A5A',
-            headerTitleStyle: { fontWeight: 'bold'},
+          options={{
+            title: 'Actividad  +Meaning',
+            headerStyle: {elevation: 0, shadowOpacity: 0, borderBottomWidth: 0, backgroundColor: '#DDDDDD'},
+            headerTintColor: '#333333',
+            headerTitleStyle: { fontFamily: 'Ubuntu_500Medium'},
           }}
         />
         <Stack.Screen
           name="Tip"
           component= {TipDetails}
           options={{
-            headerShown: true,
-            headerTintColor: '#5A5A5A',
-            headerTitleStyle: { fontWight: 'bold'},
+            title: 'Tip +Meaning',
+            headerStyle: {elevation: 0, shadowOpacity: 0, borderBottomWidth: 0, backgroundColor: '#DDDDDD'},
+            headerTintColor: '#333333',
+            headerTitleStyle: { fontFamily: 'Ubuntu_500Medium'},
           }}
+        />
+        <Stack.Screen
+          name="ActividadFullscreen"
+          component={ ActividadFullscreen }
+          options={{headerShown: true}}
         />
       </Stack.Navigator>
     </NavigationContainer>

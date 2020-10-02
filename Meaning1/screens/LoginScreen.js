@@ -1,6 +1,6 @@
 import React, {Component } from 'react';
 import { Image, Alert, Button, Text, TouchableOpacity, TextInput, View, StyleSheet, KeyboardAvoidingView } from 'react-native';
-import logo from './loglogo/logonegro.png';
+import logo from './loglogo/logoblanco.png';
 import * as Google from 'expo-google-app-auth';
 import firebase from 'firebase';
 
@@ -107,44 +107,15 @@ class LoginScreen extends Component {
   render() {
     return (
       <KeyboardAvoidingView behavior="padding" style={styles.container}>
-        <Image source={logo} style={styles.logog} />
-        <View style={styles.inputView}>
-          <TextInput
-            value={this.state.email}
-            returnKeyType="next"
-            //keyboardType = 'email-address'
-            onChangeText={(email) => this.setState({ email })}
-            placeholder='Telefono, usuario o correo electronico'
-            placeholderTextColor = '#B4B4B4'
-            onSubmitEditing={() => this.passwordInput.focus()}
-            style={styles.inputtext} />
-        </View>
-        <View style={styles.inputView}>
-          <TextInput
-            value={this.state.password}
-            onChangeText={(password) => this.setState({ password })}
-            placeholder={'Contrasena'}
-            secureTextEntry={true}
-            placeholderTextColor = '#B4B4B4'
-            returnKeyType="go"
-            ref={(input) => this.passwordInput = input}
-            style={styles.inputtext} />
-        </View>
-        <TouchableOpacity>
-          <Text style={styles.forgot}>¿Olvidaste tu contraseña?</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.Btnlogin}
-          onPress={() => this.signInWithGoogleAsync()}
-        >
-           <Text style={styles.BtnText}> Iniciar Sesión</Text>
-        </TouchableOpacity>
-        <View style={styles.abajo}>
-          <Text style={styles.cuentapregunta}>¿No tienes una cuenta?</Text>
-          <TouchableOpacity>
-            <Text style={styles.registrate}> Registrate</Text>
+          <Image source={logo} style={styles.logog} />
+          
+          <TouchableOpacity
+            style={styles.Btnlogin}
+            onPress={() => this.signInWithGoogleAsync()}
+          >
+            <Text style={styles.BtnText}>Iniciar Sesión</Text>
           </TouchableOpacity>
-        </View>
+        
       </KeyboardAvoidingView>
     );
   }
@@ -155,14 +126,14 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#272727',
+    backgroundColor: '#FFFFFF',
   },
   logog: {
-    width: 235,
+    width: 225,
     //height: 135,
     resizeMode: 'contain',
-    marginTop: 80,
-    marginBottom: 110
+    marginTop: 5,
+    marginBottom: 5
   },
   inputView: {
     borderColor: '#CCCCCC',
@@ -202,7 +173,7 @@ const styles = StyleSheet.create({
   },
   abajo: {
     flex: 1,
-    marginTop: 47,
+    marginTop: 40,
     fontSize: 7,
     alignItems:'flex-start',
     flexDirection: 'row',
@@ -214,7 +185,6 @@ const styles = StyleSheet.create({
   },
   input: {
     width: 200,
-    fontFamily: 'Baskerville',
     fontSize: 20,
     height: 44,
     padding: 10,

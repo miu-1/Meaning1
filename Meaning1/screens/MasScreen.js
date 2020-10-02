@@ -13,8 +13,8 @@ class MasScreen extends Component{
         <View style={styles.header}>
           <Image source={headerlogo} style={styles.logo} />
         </View>
-        <View style={{alignItems: 'center', justifyContent: 'center' }}>
-          <Button title= "Sign out" onPress={() => firebase.auth().signOut()} />
+        <View style={{alignItems: 'center', justifyContent: 'center', flexDirection: 'column', paddingVertical: 150}}>
+          <Button title= "Cerrar Sesión" onPress={() => firebase.auth().signOut()} color='#FFBD3A' />
         </View>
       </View>
     );

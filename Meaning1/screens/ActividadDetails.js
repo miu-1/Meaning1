@@ -1,8 +1,10 @@
 import React, { Component, useState, useCallback, useRef } from 'react';
-import { Text, View, StyleSheet, ScrollView, TouchableOpacity, ActivityIndicator } from 'react-native';
+import { Text, View, StyleSheet, ScrollView, TouchableOpacity, ActivityIndicator, Linking } from 'react-native';
 import {WebView} from 'react-native-webview';
 import Constant from 'expo-constants';
 import firebase from 'firebase';
+import HyperLink from 'react-native-hyperlink';
+
 
 export default function ActividadDetails({ route,navigation }) {
   const { Titulo } = route.params;
@@ -11,55 +13,57 @@ export default function ActividadDetails({ route,navigation }) {
   const {DescripcionActividad} = route.params;
   const {ActividadPDF} = route.params;
 
-  var storage = firebase.storage();
-  var storageRef = storage.ref();
-  var ActividadesRef = storageRef.child('Actividades');
-  var PdfRef=ActividadesRef.child(ActividadPDF);
-  var httpsReference = storage.refFromURL('https://firebasestorage.googleapis.com/v0/b/app-mobile-meaning.appspot.com/o/Afiche%20feria%20universtiaria.pdf?alt=media&token=4d447714-387c-419a-9b18-8d93541b26a7')
-  
   if (Video){
       return(
         <View style={styles.container}>
-          <View style={styles.header}>
+          <ScrollView>
             <Text style={styles.tituloact}>{Titulo}</Text>
-          </View>
-          <ScrollView style={{flex: 1, marginHorizontal:6, marginTop: 10, borderRadius: 7, borderWidth: 1, padding: 6}}>
-            <Text style={{fontSize: 16, textAlign: 'left', marginBottom: 15}}>{DescripcionVideo}</Text>
-            <WebView 
-              style={{width: '100%', height: 200, borderWidth:1, marginBottom: 15}} 
-              source={{ uri: Video }}
-              originWhitelist={['*']}
-              startInLoadingState={true}
-            />
-            <Text style={{fontSize: 16, textAlign: 'left', marginTop: 10}}>{`Actividad: ${DescripcionActividad}`}</Text>
-            <WebView 
-              style={{height: 500}} 
-              source= {{uri: ActividadPDF}}
-              originWhitelist={['*']}
-              startInLoadingState={true}
-            />
+            <HyperLink linkDefault={ true } linkStyle={{color: '#2980b9' }}>
+              <View style={styles.textbox}>
+                <Text style={styles.headerobjact}>Objetivo</Text>
+                <Text style={styles.descripciones}>{DescripcionVideo}</Text>
+                <WebView 
+                  style={{width: '100%', height: 200, borderWidth:1, marginVertical: 15}} 
+                  source={{ uri: Video }}
+                  originWhitelist={['*']}
+                  startInLoadingState={true}
+                />
+              </View>
+              <View style={styles.textbox}>
+                <Text style={styles.headerobjact}>Actividad</Text>
+                <Text style={styles.descripciones}>{DescripcionActividad}</Text>
+                <HyperLink
+                  linkStyle={{ fontSize: 16, textAlign: 'left', color: '#2980b9', fontFamily:'Ubuntu_400Regular', padding: 3}}
+                  linkText={ url => url === ActividadPDF ? 'aquí' : url}
+                  >
+                  <Text style={{fontSize: 16, textAlign: 'left', fontFamily:'Ubuntu_400Regular', padding: 3, marginVertical: 10}}>{`Descargue ${ActividadPDF} la guía para facilitar la realización de la actividad.`}</Text>
+                </HyperLink>
+              </View>
+            </HyperLink>
           </ScrollView>
         </View>
       );
   }else{
     return(
       <View style={styles.container}>
-        <View style={styles.header}>
-          <Text style={styles.tituloact}>{Titulo}</Text>
-        </View>
         <ScrollView>
-          <View style={{flex: 1, marginHorizontal:6, marginTop: 10, borderRadius: 7, borderWidth: 1, padding: 6}}>
-            <Text style={{fontSize: 16, textAlign: 'left', marginBottom: 6}}>{DescripcionVideo}</Text>
-          </View>
-          <View style={{flex: 2, marginHorizontal:6, marginTop: 10, borderRadius: 7, borderWidth: 1, padding: 6}}>
-            <Text style={{fontSize: 16, textAlign: 'left', marginTop: 15}}>{`Actividad: ${DescripcionActividad}`}</Text>
-            <WebView 
-              style={{height: 500}} 
-              source= {{uri: "https://reactnativemaster.com/wp-content/uploads/2020/02/React-native-document-viewer-pdf-sample.pdf"  }}
-              originWhitelist={['*']}
-              startInLoadingState={true}
-            />
-          </View>
+          <Text style={styles.tituloact}>{Titulo}</Text>
+          <HyperLink linkDefault={ true } linkStyle={{color: '#2980b9' }}>
+            <View style={styles.textbox}>
+              <Text style={styles.headerobjact}>Objetivo</Text>
+              <Text style={styles.descripciones}>{DescripcionVideo}</Text>
+            </View>
+            <View style={styles.textbox}>
+              <Text style={styles.headerobjact}>Actividad</Text>
+              <Text style={styles.descripciones}>{DescripcionActividad}</Text>
+              <HyperLink
+                  linkStyle={{ fontSize: 16, textAlign: 'left', color: '#2980b9', fontFamily:'Ubuntu_400Regular', padding: 3}}
+                  linkText={ url => url === ActividadPDF ? 'aquí' : url}
+                  >
+                <Text style={{fontSize: 16, textAlign: 'left', fontFamily:'Ubuntu_400Regular', padding: 3, marginVertical: 10}}>{`Descargue ${ActividadPDF} la guía para facilitar la realización de la actividad.`}</Text>
+              </HyperLink>
+            </View>
+          </HyperLink>
         </ScrollView>
       </View>
     );
@@ -81,12 +85,40 @@ const styles = StyleSheet.create({
     marginHorizontal:10
   },
   tituloact: {
-      textAlign: 'center',
-      fontSize: 26,
-      fontWeight:'bold',
-      textAlignVertical: 'center',
-      padding: 10,
-      color: '#FFFFFF',
-      opacity: 0.75
+    textAlign: 'left',
+    marginHorizontal:6,
+    marginTop: 6, 
+    padding: 5,
+    fontSize: 20,
+    fontFamily:'SourceSansPro_600SemiBold' ,
+    color: '#333333'
+  },
+  textbox: {
+    flex: 1, 
+    marginHorizontal:6,
+    marginTop: 10, 
+    borderRadius: 4,  
+    padding: 6, 
+    borderColor: '#DDDDDD',
+    borderWidth: 1,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.80,
+    elevation: 5,
+  },
+  headerobjact: {
+    fontFamily: 'Ubuntu_500Medium', 
+    fontSize: 18, 
+    textAlign: 'left', 
+    borderBottomWidth: 1,
+    padding: 3,
+    borderBottomColor: '#DDDDDD'
+  },
+  descripciones: {
+    fontSize: 16, 
+    textAlign: 'left', 
+    fontFamily:'Ubuntu_400Regular', 
+    padding: 3
   }
 });

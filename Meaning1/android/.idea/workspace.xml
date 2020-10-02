@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0dffc91b-7847-41f0-9bda-389f2d1ee9e6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../.expo-shared/assets.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/modules/Meaning1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/android.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/r/cl/Meaning/AppMovil/R.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_launcher_background.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-anydpi-v24/ic_launcher_foreground.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-hdpi/ic_launcher_background.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-hdpi/ic_launcher_foreground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-ldpi/ic_launcher_background.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-ldpi/ic_launcher_foreground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-mdpi/ic_launcher_background.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-mdpi/ic_launcher_foreground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_launcher_background.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_launcher_foreground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_launcher_background.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_launcher_foreground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-xxxhdpi/ic_launcher_background.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-xxxhdpi/ic_launcher_foreground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/source/buildConfig/debug/cl/Meaning/AppMovil/BuildConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/meaning1/MainActivity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_launcher_background.xml.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-anydpi-v24_ic_launcher_foreground.xml.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_launcher_background.png.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_launcher_foreground.png.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-ldpi_ic_launcher_background.png.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-ldpi_ic_launcher_foreground.png.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_launcher_background.png.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_launcher_foreground.png.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_launcher_background.png.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_launcher_foreground.png.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_launcher_background.png.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_launcher_foreground.png.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_launcher_background.png.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_launcher_foreground.png.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher.xml.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher_round.xml.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/debug/java/com/meaning1/ReactNativeFlipper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/meaning1/MainActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/meaning1/MainApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assets/Guardado.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assets/Home.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assets/Mas.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assets/favicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assets/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assets/logo.png.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assets/splash.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../babel.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ios/Meaning1-tvOS/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ios/Meaning1-tvOSTests/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ios/Meaning1.xcodeproj/project.pbxproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ios/Meaning1.xcodeproj/xcshareddata/xcschemes/Meaning1-tvOS.xcscheme" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ios/Meaning1.xcodeproj/xcshareddata/xcschemes/Meaning1.xcscheme" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ios/Meaning1/AppDelegate.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ios/Meaning1/AppDelegate.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ios/Meaning1/Images.xcassets/AppIcon.appiconset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ios/Meaning1/Images.xcassets/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ios/Meaning1/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ios/Meaning1/LaunchScreen.storyboard" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ios/Meaning1/main.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ios/Meaning1Tests/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ios/Meaning1Tests/Meaning1Tests.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../navigation/AppNavigation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../navigation/AuthNavigation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../navigation/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../screens/ActividadDetails.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../screens/Actividades.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../screens/LoadingScreen.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../screens/LoginScreen.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../screens/MasScreen.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../screens/MaterialScreen.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../screens/SavedScreen.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../screens/TipDetails.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../screens/Tips.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../screens/loglogo/Meaning_header.png.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../screens/loglogo/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../screens/loglogo/logo2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../screens/loglogo/logonegro.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../yarn.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view />
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1iIYCNc4MCn0LXzbY4Pe4lKYPCI" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0dffc91b-7847-41f0-9bda-389f2d1ee9e6" name="Default Changelist" comment="" />
+      <created>1601596444887</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1601596444887</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="423" y="115" key="FileChooserDialogImpl" timestamp="1601596797989">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="423" y="115" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1601596797989" />
+  </component>
+</project>

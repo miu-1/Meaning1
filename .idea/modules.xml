@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/GitMeaning.iml" filepath="$PROJECT_DIR$/GitMeaning.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/GitMeaning.iml" filepath="$PROJECT_DIR$/.idea/modules/GitMeaning.iml" group="GitMeaning" />
     </modules>
   </component>
 </project>

@@ -9,10 +9,10 @@ import RNPickerSelect, { defaultStyles } from 'react-native-picker-select';
 import {Card} from 'react-native-paper';
 import { ACTIVIDADES } from './Actividades';
 import { TIPS } from './Tips';
-
+import {useFonts} from 'expo-font'
 
 const cursos = [
-  { label: 'Jardín', value: 'Jardín' },
+  { label: 'Prekinder/Kinder', value: 'Prekinder/Kinder' },
   { label: '1° Básico', value: '1° Básico' },
   { label: '2° Básico', value: '2° Básico' },
   { label: '3° Básico', value: '3° Básico' },
@@ -27,6 +27,8 @@ const materias = [
   { label: 'Historia', value: 'Historia' },
   { label: 'Inglés', value: 'Inglés'}
 ]
+
+
 
 class MaterialScreen extends Component {
   constructor(props) {
@@ -67,8 +69,8 @@ class MaterialScreen extends Component {
         this.setState({ ActFiltered: this.state.Actividades.filter(i => i.Materia.includes(favMateria) && i.Curso.includes(favCurso))})
       }else{
         this.setState({ ActFiltered: this.state.Actividades.filter(i => i.Curso.includes(favCurso))})
-        if(favCurso == 'Jardín'){
-          this.setState({ TipsFiltered: this.state.Tips.filter(i => i.Curso.includes('Jardín'))})
+        if(favCurso == 'Prekinder/Kinder'){
+          this.setState({ TipsFiltered: this.state.Tips.filter(i => i.Curso.includes('Prekinder/Kinder'))})
         }else{
           this.setState({ TipsFiltered: this.state.Tips.filter(i => i.Curso.includes('Básica'))})
         }
@@ -78,7 +80,7 @@ class MaterialScreen extends Component {
     
   render() {
     return(
-      <KeyboardAvoidingView behavior = "padding" style = { styles.container } >
+      <KeyboardAvoidingView behavior = "height" style = { styles.container } >
         
         <View style={styles.inputsearch}>
           <MaterialIcons style={{ marginLeft: 4, marginRight: 13 }} name="search" size={26} color='black' />
@@ -88,99 +90,49 @@ class MaterialScreen extends Component {
             returnKeyType="search"
             onChangeText= {text=> this.handleSearch(text)} />
         </View>
-        
-        <View style={styles.filtros}>
-          <Text style={{ fontSize: 15, fontWeight: 'bold', marginLeft: 7}}>Filtros: </Text>
-          <RNPickerSelect
-            placeholder={{
-              label: 'Elige un curso...',
-              value: null,
-              color: '#000000',
-            }}
-            items={cursos}
-            onValueChange={value => {this.setState({favCurso: value})}}
-            style= {{
-              ...pickerSelectStyles,
-              iconContainer: {
-                top: 11,
-                right: 10,
-              },
-            }}
-            value={this.state.favCurso}
-            Icon={() => {
-              return (
-                <View style={styles.iconofiltros}/>
-              );
-            }}
-          />
-          <RNPickerSelect
-            placeholder={{
-              label: 'Elige una materia...',
-              value: null,
-              color: '#000000'
-            }}
-            items={materias}
-            onValueChange={value => {this.setState({favMateria: value})}}
-            style= {{
-              ...pickerSelectStyles,
-              iconContainer: {
-                top: 11,
-                right: 10,
-              },
-            }}
-            value={this.state.favMateria}
-            Icon={() => {
-              return (
-                <View style={styles.iconofiltros}/>
-              );
-            }}
-          />
-          <TouchableOpacity style={styles.Btnaplicar} onPress={this.FilterSelect.bind(this)}>
-            <Text style={styles.BtnText}> Aplicar </Text>
-          </TouchableOpacity>
-        </View>
 
         <View style={styles.ContainerActTips}>
-          <Text style={{marginBottom:8, fontWeight: 'bold', fontSize: 23, textAlign: 'center'}}>Actividades</Text>
-          <View style={{flex:1, width: '99%', borderWidth: 1, borderColor:'#DDDDDD' , borderRadius: 5}}>
+          <Text style={{padding: 5, fontFamily: 'SourceSansPro_600SemiBold', fontSize: 21, textAlign: 'left', borderBottomColor: '#ADADAD'}}>Actividades</Text>
+          <View style={{flex:1, borderWidth: 1, borderColor: '#DDDDDD'}}>
             <FlatList
               data={this.state.ActFiltered}
               renderItem={({item})=>
-                <Card style={{backgroundColor: '#EFEFEF', borderBottomWidth: 1, borderBottomColor: '#DDDDDD', borderRadius: 0}} onPress={this.getActividad.bind(this,item)}>
+                <Card style={{backgroundColor: '#FFFFFF', borderBottomWidth: 1, borderBottomColor: '#DDDDDD', borderRadius: 0}} onPress={this.getActividad.bind(this,item)}>
                   <View style= {{flex: 1, flexDirection:'row', padding: 5, marginLeft: 6}}>
-                    <Text style={{flex: 1, fontSize: 15, fontWeight: '500', marginRight: 6}}>{item.Titulo}</Text>
+                    <Text style={{flex: 1, fontSize: 13, fontFamily: 'Ubuntu_500Medium', marginRight: 6}}>{item.Titulo}</Text>
                   </View>
 
                   <View style= {{flex: 1, flexDirection:'row', padding: 6, marginLeft: 6}}>
-                    <Text style={{flex: 1, fontSize: 15}}>{item.Fecha}</Text>
-                    <Text style={{flex: 2, fontSize: 15, textAlign: 'left', paddingRight: 6, marginLeft: 23}}>{`${item.Curso} - ${item.Materia}`}</Text> 
+                    <Text style={{flex: 1, fontSize: 13, fontFamily: 'Ubuntu_400Regular'}}>{item.Fecha}</Text>
+                    <Text style={{flex: 2, fontSize: 13, textAlign: 'left', paddingRight: 6, marginLeft: 23, fontFamily: 'Ubuntu_400Regular'}}>{`${item.Curso} ${item.Materia}`}</Text> 
                   </View>
                 </Card>
               }
               keyExtractor={item=>item.ID}
             />
           </View>
-         
-          <Text style={{marginBottom:8, fontWeight: 'bold', fontSize: 23, marginTop: 5, textAlign: 'center'}}>Tips</Text>
-           <View style={{flex: 1, width: '99%', borderWidth: 1, borderColor:'#DDDDDD' , borderRadius: 5}}>
+        </View>
+
+        <View style={styles.ContainerActTips}> 
+          <Text style={{fontFamily: 'SourceSansPro_600SemiBold', fontSize: 21, padding: 5, textAlign: 'left', borderBottomColor: '#ADADAD'}}>Tips</Text>
+           <View style={{flex: 1, borderWidth: 1, borderColor:'#DDDDDD'}}>
             <FlatList
               data={this.state.TipsFiltered}
               renderItem={({item})=>
-                <Card style={{backgroundColor: '#EFEFEF', borderBottomWidth: 1, borderBottomColor: '#DDDDDD', borderRadius: 0}} onPress={this.getTip.bind(this,item)}>
+                <Card style={{backgroundColor: '#FFFFFF', borderBottomWidth: 1, borderBottomColor: '#DDDDDD', borderRadius: 0}} onPress={this.getTip.bind(this,item)}>
                   <View style= {{flex: 1, flexDirection:'row', padding: 5, marginLeft: 6}}>
-                    <Text style={{flex: 1, fontSize: 15, fontWeight: '500', marginRight:6}}>{item.Titulo}</Text>
+                    <Text style={{flex: 1, fontSize: 13, fontFamily: 'Ubuntu_500Medium', marginRight:6}}>{item.Titulo}</Text>
                   </View>
 
                   <View style= {{flex: 1, flexDirection:'row', padding: 6, marginLeft: 6}}>
-                    <Text style={{flex: 1, fontSize: 15}}>{item.Fecha}</Text>
-                    <Text style={{flex: 2, fontSize: 15, textAlign: 'left', paddingRight: 6, marginLeft: 67}}>{`Nivel: ${item.Curso}`}</Text> 
+                    <Text style={{flex: 1, fontSize: 13, fontFamily: 'Ubuntu_400Regular'}}>{item.Fecha}</Text>
+                    <Text style={{flex: 2, fontSize: 13, textAlign: 'left', paddingRight: 6, marginLeft: 60, fontFamily: 'Ubuntu_400Regular'}}>{`Nivel: ${item.Curso}`}</Text> 
                   </View>
                 </Card>
               }
               keyExtractor={item=>item.ID}
             />
           </View>
-
         </View>
       </KeyboardAvoidingView>
     );
@@ -191,14 +143,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1
   },
-  header: {
-    marginTop: Constant.statusBarHeight,
-    height: 60,
-    backgroundColor: '#FFBD3A', 
-    justifyContent: 'center',
-    alignContent: 'center',
-    flexDirection: 'column'
-  },
   logo: {
     justifyContent: 'center',
     alignItems: 'center',
@@ -208,14 +152,14 @@ const styles = StyleSheet.create({
   inputsearch: {
     marginTop: Constant.statusBarHeight,
     flexDirection: 'row',
-    marginLeft: 12,
+    marginHorizontal: 10,
     justifyContent: 'flex-start',
     alignItems: 'center',
-    backgroundColor: '#F1AA54',
-    borderColor: '#F1AA54',
+    backgroundColor: '#6EB2E1',
+    borderColor: '#6EB2E1',
     borderWidth: 1,
-    borderRadius: 2,
-    width: '93%',
+    borderRadius: 3,
+    width: '94%',
     height: 41,
     padding: 8,
     fontSize: 19
@@ -228,18 +172,17 @@ const styles = StyleSheet.create({
   },
   filtros:{
     marginTop: 6,
-    marginLeft: 12,
+    marginHorizontal: 10,
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 1,
-    borderRadius: 2,
-    width: '93%',
-    height: 42,
-    padding: 10,
-    backgroundColor: '#F0648C',
-    borderColor: '#F0648C',
-    flexDirection: 'row',
-    opacity: 0.9
+    borderRadius: 3,
+    width: '94%',
+    height: 41,
+    padding: 8,
+    backgroundColor: '#6EB2E1',
+    borderColor: '#6EB2E1',
+    flexDirection: 'row'
   },
   iconofiltros: {
     backgroundColor: 'transparent',
@@ -253,40 +196,43 @@ const styles = StyleSheet.create({
     height: 0,
   },
   Btnaplicar: {
-    marginTop: 6,
+    marginTop: 5,
     marginLeft: 6,
-    paddingVertical: 4,
-    width: 60,
+    paddingVertical: 2,
+    paddingHorizontal: 4,
+    width: 51,
     backgroundColor: '#1C355E',
     borderRadius: 16,
-    height: 22,
+    height: 20,
   },
   BtnText: {
-    paddingHorizontal: 3,
-    fontSize: 14,
+    fontSize: 12,
     fontWeight: '600',
-    color: '#FFFFFF'
+    color: '#FFFFFF',
+    fontFamily: 'SourceSansPro_400Regular'
   },
   ContainerActTips: {
     flex: 1,
     marginTop: 6,
     marginLeft: 12,
-    borderColor: '#8CC63F',
+    borderColor: '#DDDDDD',
     borderWidth: 1,
     borderRadius: 4,
     width: '93%',
-    height: 402,
-    padding: 7,
-    opacity: 0.8,
-    backgroundColor: '#8CC63F',
-    flexDirection: 'column'
+    backgroundColor: '#FFFFFF',
+    flexDirection: 'column',
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.80,
+    elevation: 5,
   }
 });
 
 const pickerSelectStyles = StyleSheet.create({
   inputIOS: {
     marginLeft: 7,
-    fontSize: 12,
+    fontSize: 5,
     //paddingVertical: 8,
     paddingHorizontal: 4,
     borderWidth: 1,
@@ -300,7 +246,7 @@ const pickerSelectStyles = StyleSheet.create({
      // to ensure the text is never behind the icon
   },
   inputAndroid: {
-    fontSize: 12,
+    fontSize: 5,
     marginLeft: 7,
     paddingHorizontal: 4,
     //paddingVertical: 8,

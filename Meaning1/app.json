@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Meaning1",
-    "slug": "Meaning1",
+    "name": "Meaning",
+    "slug": "Meaning",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -10,17 +10,27 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "privacy": "public",
     "updates": {
       "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": [
-      "**/*"
+      "assets/**/*"
     ],
     "ios": {
+      "bundleIdentifier": "cl.Meaning.AppMovil",
+      "buildNumber": "1.0.0",
       "supportsTablet": true
     },
     "android": {
-      "package": "cl.Meaning.AppMovil1"
+      "package": "cl.Meaning.AppMovil",
+      "versionCode": 1,
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=cl.Meaning.AppMovil",
+      "googleServicesFile": "./android/app/google-services.json",
+      "adaptiveIcon": {
+        "foregroundImage": "./android/app/src/main/res/drawable/ic_launcher_foreground.xml",
+        "backgroundColor":"#ffbd3a"
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"
