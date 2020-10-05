@@ -34,8 +34,7 @@ function InicioScreen() {
     <Tab.Navigator
       tabBarOptions={{
         activeTintColor: '#FFBD3A',
-        inactiveTintColor: 'gray',
-        labelStyle: {fontFamily: 'SourceSansPro_400Regular'}
+        inactiveTintColor: 'gray'
       }}>
       <Tab.Screen 
         name="Material" 
