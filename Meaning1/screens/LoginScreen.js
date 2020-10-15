@@ -82,8 +82,10 @@ class LoginScreen extends Component {
     try {
       const result = await Google.logInAsync({
         androidClientId: '432650538639-lei67eg5k9jeifkrn6fgrjs0419q261l.apps.googleusercontent.com',
-      //behavior: 'web',
+        behavior: 'web',
         iosClientId: '432650538639-rd7vq84gabj2ko6smietfp68qdldli21.apps.googleusercontent.com',
+        androidStandaloneAppClientId: '432650538639-7msbifgn1onr79uol55b9lh7k7n0oeet.apps.googleusercontent.com',
+        webClientId:'432650538639-lh45nbv1veeb4ear4vg68jn70n220rdb.apps.googleusercontent.com',
         scopes: ['profile', 'email'],
       });
 

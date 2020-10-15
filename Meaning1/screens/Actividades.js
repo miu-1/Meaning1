@@ -90,13 +90,24 @@ export const ACTIVIDADES =
         },
         {
         ID: '9',
-        Titulo: '',
+        Titulo: 'Experimentando con hielo',
         Fecha: '28/9/2020',
         Curso:'Prekinder/Kinder',
         Materia:'',
         DescripcionVideo:'Promueve que tu hijo participe en investigaciones científicas simples, tales como la observación de los cambios de estado del agua. Acompáñalo y explícale los fenómenos. ',                    
         Video: undefined,
         DescripcionActividad: 'Reúne 3 cubos de hielo y experimenta con tu hijo/a: 1. Expone un cubo al sol y observa lo que sucede. 2. Agrega sal a otro cubo y observa lo que sucede. 3.Inserta el último cubo en un vaso de agua y observa lo que sucede. Finalmente, comparen los diferentes procesos.',
-        ActividadPDF: undefined,
+        ActividadPDF: 'https://firebasestorage.googleapis.com/v0/b/app-mobile-meaning.appspot.com/o/Actividades%2FActividad%209.pdf?alt=media&token=4fb580a2-363f-41a0-bf58-5187431a9416',
+        },
+        {
+        ID: '10',
+        Titulo: 'Semejanzas y diferencias',
+        Fecha: '2/10/2020',
+        Curso:'Prekinder/Kinder',
+        Materia:'',
+        DescripcionVideo:'Comentarle a tu hijo que existe diversidad en las personas, indicando semejanzas y diferencias entre ellas, permite que comprenda que todos somos únicos e irrepetibles. ',                    
+        Video: undefined,
+        DescripcionActividad: 'Pídele a tu hijo/a que diga semejanzas y diferencias entre una dupla familiar: dos integrantes distintos o él y otro integrante. Registra sus comentarios en una bitácora. ',
+        ActividadPDF: 'https://firebasestorage.googleapis.com/v0/b/app-mobile-meaning.appspot.com/o/Actividades%2FActividad%2010.pdf?alt=media&token=56ebb1bb-e3d7-475e-b5f7-cb1f60dc4011',
         }
     ];

@@ -2,7 +2,7 @@
   "expo": {
     "name": "Meaning",
     "slug": "Meaning",
-    "version": "1.0.0",
+    "version": "2.1.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -15,21 +15,49 @@
       "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": [
-      "assets/**/*"
+      "assets/**/*",
+      "src/images/*"
     ],
     "ios": {
       "bundleIdentifier": "cl.Meaning.AppMovil",
-      "buildNumber": "1.0.0",
-      "supportsTablet": true
+      "buildNumber": "2.1.0",
+      "supportsTablet": true,
+      "config": {
+        "googleSignIn": {
+          "reservedClientId": "com.googleusercontent.apps.432650538639-rd7vq84gabj2ko6smietfp68qdldli21"
+        }
+      }
     },
     "android": {
+      "enableDangerousExperimentalLeanBuilds": true,
       "package": "cl.Meaning.AppMovil",
-      "versionCode": 1,
+      "versionCode": 3,
       "playStoreUrl": "https://play.google.com/store/apps/details?id=cl.Meaning.AppMovil",
-      "googleServicesFile": "./android/app/google-services.json",
-      "adaptiveIcon": {
-        "foregroundImage": "./android/app/src/main/res/drawable/ic_launcher_foreground.xml",
-        "backgroundColor":"#ffbd3a"
+      "googleServicesFile": "./google-services.json",
+      "permissions": [
+        "READ_CALENDAR",
+        "WRITE_CALENDAR",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_SETTINGS",
+        "VIBRATE",
+        "READ_PHONE_STATE",
+        "com.anddoes.launcher.permission.UPDATE_COUNT",
+        "com.android.launcher.permission.INSTALL_SHORTCUT",
+        "com.google.android.c2dm.permission.RECEIVE",
+        "com.google.android.gms.permission.ACTIVITY_RECOGNITION",
+        "com.google.android.providers.gsf.permission.READ_GSERVICES",
+        "com.htc.launcher.permission.READ_SETTINGS",
+        "com.htc.launcher.permission.UPDATE_SHORTCUT",
+        "com.majeur.launcher.permission.UPDATE_BADGE",
+        "com.sec.android.provider.badge.permission.READ",
+        "com.sec.android.provider.badge.permission.WRITE",
+        "com.sonyericsson.home.permission.BROADCAST_BADGE"
+      ],
+      "config": {
+        "googleSignIn": {
+          "apiKey": "AIzaSyA74JlrT09_0LsTLlDQ9a4Ysx41GCeVtPc",
+          "certificateHash": "29CE7FBCCBA7B611BA6E79B3FBB324272C3CBAB9"
+        }
       }
     },
     "web": {
